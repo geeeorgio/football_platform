@@ -1,0 +1,39 @@
+# Build outputs
+dist
+out
+build
+.next
+.swc
+.turbo
+
+# Dependencies
+node_modules
+
+# Logs & cache
+*.log
+.cache
+.temp
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Compiled assets
+*.min.js
+*.min.css
+*.map
+
+# Coverage
+coverage
+*.lcov
+
+# IDE & OS
+.idea
+.vscode
+.DS_Store
+
+# Mobile (Expo/React Native)
+.expo
+ios
+android

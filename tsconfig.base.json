@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    // Enable all strict type checks — catches most bugs early
+    "strict": true,
+
+    // Compile to modern JavaScript
+    "target": "ESNext",
+
+    // Generate .map files — debug shows errors in .ts not compiled .js
+    "sourceMap": true,
+
+    // Generate .d.ts files — so other packages can import types
+    "declaration": true,
+
+    // Link .d.ts to source — "Go to Definition" opens .ts not .d.ts
+    "declarationMap": true,
+
+    // Root for resolving path aliases below
+    "baseUrl": ".",
+
+    // import "@football/shared" instead of "../../packages/shared/src"
+    "paths": {
+      "@football/shared": ["packages/shared/src/index.ts"]
+    },
+
+    // Allow default imports from CommonJS packages
+    "esModuleInterop": true,
+
+    // Skip type checking in node_modules — speeds up compilation
+    "skipLibCheck": true,
+
+    // Prevent casing bugs in different OS (Mac/Windows vs Linux)
+    "forceConsistentCasingInFileNames": true,
+
+    // Error if variable is declared but never used
+    "noUnusedLocals": true,
+
+    // Error if function parameter is declared but never used
+    "noUnusedParameters": true,
+
+    // Every code path in a function must explicitly return a value
+    "noImplicitReturns": true,
+
+    // Every switch case must have break or return
+    "noFallthroughCasesInSwitch": true
+  }
+}
