@@ -9,10 +9,12 @@
   ],
   "scripts": {
     "api:dev": "yarn workspace @football/api start:dev",
-    "web:dev": "yarn workspace @football/web dev"
-  },
-  "engines": {
-    "node": "24.x"
+    "web:dev": "yarn workspace @football/web dev",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:restart": "docker compose restart",
+    "db:logs": "docker compose logs -f",
+    "db:status": "docker ps"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -26,5 +28,8 @@
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.57.1"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
