@@ -1,0 +1,17 @@
+{
+  "name": "football",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "api:dev": "yarn workspace @football/api start:dev",
+    "web:dev": "yarn workspace @football/web dev"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
