@@ -11,7 +11,7 @@ import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 
 // Enforces correct import order and grouping
-import importPlugin from 'eslint-plugin-import';
+import importPlugin from 'eslint-plugin-import-x';
 
 // Removes unused imports automatically
 import unusedImports from 'eslint-plugin-unused-imports';

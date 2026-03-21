@@ -1,0 +1,16 @@
+generator client {
+  // Use the modern Prisma generator engine
+  provider = "prisma-client"
+
+  // Output path relative to this schema file — apps/api/generated/prisma
+  output   = "../generated/prisma"
+
+  // Forces CommonJS for NestJS compatibility
+  moduleFormat   = "cjs"
+}
+
+datasource db {
+  // PostgreSQL adapter matches Docker container
+  provider = "postgresql"
+  // URL injected prisma.config.ts at CLI time, and ConfigService at runtime
+}
