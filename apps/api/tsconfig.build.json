@@ -1,0 +1,7 @@
+{
+  // Inherit from api tsconfig
+  "extends": "./tsconfig.json",
+
+  // Exclude test files from production build
+  "exclude": ["node_modules", "test", "dist", "**/*spec.ts"]
+}

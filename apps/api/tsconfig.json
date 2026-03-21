@@ -1,0 +1,34 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // Required for NestJS decorators — @Module(), @Controller(), @Injectable()
+    "experimentalDecorators": true,
+
+    // Required for dependency injection to work in NestJS
+    "emitDecoratorMetadata": true,
+
+    // Module system for Node.js
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    // Output
+    "outDir": "./dist",
+    "removeComments": true,
+    "incremental": true,
+
+    // NestJS defaults - Overrides from base
+    "target": "ES2023",
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "noFallthroughCasesInSwitch": false,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "resolvePackageJsonExports": true,
+
+    // Required for Project References
+    "composite": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
