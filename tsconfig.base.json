@@ -3,8 +3,12 @@
     // Enable all strict type checks — catches most bugs early
     "strict": true,
 
+    /// Node.js ESM module system
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
     // Compile to modern JavaScript
-    "target": "ESNext",
+    "target": "esnext",
 
     // Generate .map files — debug shows errors in .ts not compiled .js
     "sourceMap": true,

@@ -39,7 +39,6 @@ export default defineConfig(
       // ignore only selected configs!
       '**/prisma.config.ts',
       '**/jest.config.ts',
-      ,
     ],
   },
 
@@ -97,8 +96,13 @@ export default defineConfig(
         },
       ],
 
-      // Force 'import type' for type-only imports — better tree shaking
-      '@typescript-eslint/consistent-type-imports': 'error',
+      // Force 'import type' for type-only imports
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          fixStyle: 'inline-type-imports',
+        },
+      ],
 
       // Enforce consistent import grouping and order
       'import/order': [
@@ -138,6 +142,14 @@ export default defineConfig(
 
       // Warn on console.log — allow warn and error for intentional logging
       'no-console': ['warn', { allow: ['warn', 'error'] }],
+    },
+  },
+  {
+    // Don't use type-imports in Nest.js though
+    files: ['apps/api/src/**/*.ts'],
+    rules: {
+      //
+      '@typescript-eslint/consistent-type-imports': 'off',
     },
   },
 );

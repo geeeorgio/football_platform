@@ -17,7 +17,6 @@
     "incremental": true,
 
     // NestJS defaults - Overrides from base
-    "target": "ES2023",
     "strictNullChecks": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,

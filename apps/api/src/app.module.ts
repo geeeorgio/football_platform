@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 
 import { AppController } from './app.controller';
 import { validate } from './common/config/env.config';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { validate } from './common/config/env.config';
       envFilePath: join(__dirname, '../../../../.env'),
       validate,
     }),
+    PrismaModule,
   ],
   controllers: [AppController],
 })
