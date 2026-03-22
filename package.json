@@ -14,7 +14,8 @@
     "db:down": "docker compose down",
     "db:restart": "docker compose restart",
     "db:logs": "docker compose logs -f",
-    "db:status": "docker ps"
+    "db:status": "docker ps",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
