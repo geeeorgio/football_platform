@@ -36,7 +36,10 @@ export default defineConfig(
       '**/.expo/**', // Expo build otput
       '**/coverage/**', // Test coverage reports
       '**/build/**', // Other build outputs
-      '**/*.config.ts', // prisma.config.ts, jest.config.ts ...etc
+      // ignore only selected configs!
+      '**/prisma.config.ts',
+      '**/jest.config.ts',
+      ,
     ],
   },
 
