@@ -11,6 +11,8 @@ export const envSchema = z.object({
   DATABASE_URL: z.url(),
   WEB_PORT: z.coerce.number().default(3000),
   NEXT_PUBLIC_API_URL: z.url(),
+  JWT_ACCESS: z.string().min(32),
+  JWT_REFRESH: z.string().min(32),
 });
 
 export type Env = z.infer<typeof envSchema>;
