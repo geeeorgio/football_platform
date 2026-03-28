@@ -1,8 +1,20 @@
-import { IsEmail, IsNotEmpty, IsString, Matches, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, Length, Matches, MinLength } from 'class-validator';
 
-import { PASSWORD_MIN_LENGTH, PASSWORD_REGEX } from '../../../common/constants/auth.constants';
+import {
+  PASSWORD_MIN_LENGTH,
+  PASSWORD_REGEX,
+  USERNAME_MAX_LENGTH,
+  USERNAME_MIN_LENGTH,
+} from '../../../common/constants/auth.constants';
 
 export class RegisterDto {
+  @IsString()
+  @IsNotEmpty({ message: 'Username is required' })
+  @Length(USERNAME_MIN_LENGTH, USERNAME_MAX_LENGTH, {
+    message: 'Username should contain at least 2 (up to 20) characters',
+  })
+  username!: string;
+
   @IsEmail({}, { message: 'Please provide a valid email address' })
   @IsNotEmpty({ message: 'Email is required' })
   email!: string;
