@@ -13,7 +13,7 @@ import { PrismaModule } from './prisma/prisma.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: join(process.cwd(), '.env'),
+      envFilePath: join(__dirname, '../../../../.env'),
       validate,
     }),
     PrismaModule,

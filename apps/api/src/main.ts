@@ -1,6 +1,7 @@
 import { Logger, VersioningType } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
+import cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
 import type { Env } from './common/config/env.schema';
@@ -9,6 +10,8 @@ import { setupValidationPipe } from './common/config/validation.pipe.setup';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.use(cookieParser());
 
   app.setGlobalPrefix('api');
   app.enableVersioning({
@@ -22,15 +25,16 @@ async function bootstrap() {
 
   setupValidationPipe(app, nodeEnv === 'production');
 
-  if (nodeEnv !== 'production') {
-    setupSwagger(app);
-    Logger.log(`Documentation: http://localhost:${port}/docs`);
-  }
-
   app.enableShutdownHooks();
+
+  if (nodeEnv !== 'production') setupSwagger(app);
 
   await app.listen(port);
 
   Logger.log(`API v1 status: http://localhost:${port}/api/v1/health`);
+
+  if (nodeEnv !== 'production') {
+    Logger.log(`Documentation: http://localhost:${port}/docs`);
+  }
 }
 bootstrap();

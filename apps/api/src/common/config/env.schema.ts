@@ -13,6 +13,7 @@ export const envSchema = z.object({
   NEXT_PUBLIC_API_URL: z.url(),
   JWT_ACCESS: z.string().min(32),
   JWT_REFRESH: z.string().min(32),
+  MOBILE_HEADER: z.string().min(15),
 });
 
 export type Env = z.infer<typeof envSchema>;
