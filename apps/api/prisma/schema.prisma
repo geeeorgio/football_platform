@@ -23,10 +23,27 @@ model User {
   predictionComments  PredictionComment[]
   newsComments        NewsComment[]
 
+  sessions            Session[]
+
   createdAt           DateTime       @default(now())      @map("created_at")
   updatedAt           DateTime       @updatedAt           @map("updated_at")
 
   @@map("users")
+}
+
+model Session {
+  id           String   @id @default(cuid(2))
+  userId       String   @map("user_id")
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  hashedToken  String   @unique @map("hashed_token")
+
+  userAgent    String?  @map("user_agent")
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  expiresAt    DateTime @map("expires_at")
+
+  @@map("sessions")
 }
 
 model Team {
